@@ -1,0 +1,23 @@
+@model IEnumerable<Student>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>StudentId</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.StudentId</td>
+                <td>@student.FirstName</td>
+                <td>@student.LastName</td>
+                <td>@(string.IsNullOrEmpty(student.EmailAddress) ? "No Email" : student.EmailAddress)</td>
+            </tr>
+        }
+    </tbody>
+</table>
